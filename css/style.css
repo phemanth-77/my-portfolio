@@ -101,3 +101,40 @@ body { background: linear-gradient(115deg, var(--paper) 0%, #f7f8f5 58%, #eef2ec
 @media (prefers-reduced-motion: reduce) {
 	.pillar-grid article, .project-card, .project-actions button, .project-actions a, .social-links a, .contact-links a { transition: none; }
 }
+
+/* Align the visual language with the portrait: navy tailoring, ivory light, and gold detail. */
+:root {
+	--ink: #172235;
+	--muted: #68717c;
+	--paper: #f5f3ef;
+	--line: #d6d8d8;
+	--accent: #b1843b;
+	--mint: #e2e3dd;
+	--blue: #dfe5ea;
+	--dark: #172235;
+}
+body { background: linear-gradient(120deg, #f5f3ef 0%, #f7f6f3 56%, #e8ecec 100%); }
+.site-header.scrolled { background: #f5f3eff2; }
+.button-accent { background: var(--accent); color: #fff; }
+.button-accent:hover { background: #946a2c; }
+.button-outline:hover { background: var(--ink); }
+.live-dot { background: #9aab87; }
+.hero em, .section-content em, .contact em { color: var(--accent); }
+.map-ring.ring-b { color: #8799a5; }
+.map-tech { color: #526c82; }
+.map-people { color: #7d8b72; }
+.photo-placeholder { position: relative; background: #d7d6d2; border: 0; box-shadow: 12px 12px 0 var(--accent); }
+.photo-placeholder:after { position: absolute; inset: 0; border: 1px solid #ffffff66; content: ''; pointer-events: none; }
+.photo-placeholder img { object-position: center top; filter: saturate(.88) contrast(1.03); }
+.statement { background: var(--dark); }
+.section-light { background: #e7e7e2; }
+.project-card.green { background: #e2e3dd; }
+.project-card.blue { background: #dfe5ea; }
+.project-card.orange { background: #c39851; }
+.site-footer { background: #101927; }
+.resume-sheet { background: #fffefa; }
+.section-accent { background: #c39851; }
+.support-copy, .note { color: #503e25; }
+@media (max-width: 960px) {
+	.photo-placeholder { box-shadow: 8px 8px 0 var(--accent); }
+}
