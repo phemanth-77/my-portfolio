@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Hemanth Vidya Deep | Portfolio
 
-# Run and deploy your AI Studio app
+A standalone personal-brand portfolio for Pilli Dharma Teja Hemanth Vidya Deep, focused on management, business, strategy, leadership, product and technology.
 
-This contains everything you need to run your app locally.
+## Open locally
 
-View your app in AI Studio: https://ai.studio/apps/65657782-8744-4de9-8693-70576e796344
+Open `index.html` directly in a browser. The site uses only HTML, CSS and vanilla JavaScript.
 
-## Run Locally
+For a local development server:
 
-**Prerequisites:**  Node.js
+```bash
+npm run dev
+```
 
+## Deploy to Vercel
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The project is configured for Vercel with Vite. Authenticate and deploy from the repository root:
+
+```bash
+npx vercel login
+npx vercel --prod
+```
+
+Alternatively, import `phemanth-77/my-portfolio` in Vercel. It will use `npm run build` and publish `dist`.
