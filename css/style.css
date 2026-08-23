@@ -140,33 +140,24 @@ body { background: linear-gradient(120deg, #f5f3ef 0%, #f7f6f3 56%, #e8ecec 100%
 .map-people { color: #7d8b72; }
 .photo-placeholder { 
 	position: relative; 
-	background: #e8e6e1;
-	border: 8px solid #b1843b;
+	background: #b1843b;
+	padding: 16px;
 	aspect-ratio: 7/9;
-	overflow: hidden;
+	overflow: visible;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	max-width: 380px;
 	width: 100%;
-	box-shadow: 24px 24px 0 rgba(177, 132, 59, 0.3), 
-	            0 20px 60px rgba(0,0,0,0.12),
-	            inset 0 0 0 1px rgba(255,255,255,0.6);
+	box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .photo-placeholder:hover {
 	transform: translateY(-4px);
-	box-shadow: 28px 28px 0 rgba(177, 132, 59, 0.4),
-	            0 30px 80px rgba(0,0,0,0.15),
-	            inset 0 0 0 1px rgba(255,255,255,0.6);
+	box-shadow: 0 30px 80px rgba(0,0,0,0.2);
 }
 .photo-placeholder:after { 
-	position: absolute; 
-	inset: 8px; 
-	border: 2px solid rgba(255,255,255,0.5); 
-	content: ''; 
-	pointer-events: none;
-	opacity: 0.8;
+	display: none;
 }
 .photo-placeholder img { 
 	width: 100%;
@@ -175,6 +166,7 @@ body { background: linear-gradient(120deg, #f5f3ef 0%, #f7f6f3 56%, #e8ecec 100%
 	object-position: center top; 
 	filter: saturate(1) contrast(1.08) brightness(1);
 	display: block;
+	aspect-ratio: 7/9;
 }
 .statement { background: var(--dark); }
 .section-light { background: #e7e7e2; }
@@ -191,16 +183,13 @@ body { background: linear-gradient(120deg, #f5f3ef 0%, #f7f6f3 56%, #e8ecec 100%
 		gap: 3rem;
 	}
 	.photo-placeholder { 
-		max-width: 380px;
+		max-width: 360px;
 		margin: 0 auto;
-		box-shadow: 20px 20px 0 rgba(177, 132, 59, 0.3), 
-		            0 15px 50px rgba(0,0,0,0.12),
-		            inset 0 0 0 1px rgba(255,255,255,0.6);
+		padding: 14px;
+		box-shadow: 0 15px 50px rgba(0,0,0,0.12);
 	}
 	.photo-placeholder:hover {
 		transform: translateY(-3px);
-		box-shadow: 22px 22px 0 rgba(177, 132, 59, 0.35),
-		            0 20px 60px rgba(0,0,0,0.14),
-		            inset 0 0 0 1px rgba(255,255,255,0.6);
+		box-shadow: 0 20px 60px rgba(0,0,0,0.14);
 	}
 }
