@@ -94,13 +94,326 @@ body { background: linear-gradient(115deg, var(--paper) 0%, #f7f8f5 58%, #eef2ec
 .resume-sheet { box-shadow: var(--shadow-soft); }
 .modal-panel { border-radius: 2px; box-shadow: 0 24px 70px #0000002e; }
 
-/* Enhanced photo styling and layout */
-.about-columns {
-	display: grid;
-	grid-template-columns: 1fr 420px;
-	gap: 5rem;
+/* Enhanced Professional & Sophisticated UI */
+:root {
+	--shadow-xs: 0 2px 8px rgba(23, 34, 53, 0.06);
+	--shadow-sm: 0 4px 16px rgba(23, 34, 53, 0.08);
+	--shadow-md: 0 12px 32px rgba(23, 34, 53, 0.12);
+	--shadow-lg: 0 20px 64px rgba(23, 34, 53, 0.16);
+	--shadow-xl: 0 32px 96px rgba(23, 34, 53, 0.18);
+	--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+	letter-spacing: 0.3px;
+}
+
+/* Enhanced Button Styling */
+.button {
+	border-radius: 6px;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	padding: 0.85rem 1.8rem;
+	transition: var(--transition);
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--shadow-sm);
+	border: none;
+}
+
+.button:hover {
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.button:active {
+	transform: translateY(0);
+}
+
+.button-accent {
+	background: linear-gradient(135deg, #b1843b 0%, #8f6a2f 100%);
+	color: #fff;
+}
+
+.button-accent:hover {
+	background: linear-gradient(135deg, #c09642 0%, #9d7536 100%);
+}
+
+.button-outline {
+	border: 1.5px solid var(--ink);
+	background: transparent;
+	color: var(--ink);
+}
+
+.button-outline:hover {
+	background: var(--ink);
+	color: #fff;
+	box-shadow: var(--shadow-md);
+}
+
+/* Enhanced Card Styling */
+.pillar-grid article,
+.project-card {
+	border-radius: 8px;
+	box-shadow: var(--shadow-sm);
+	transition: var(--transition);
+	border: 1px solid rgba(23, 34, 53, 0.06);
+	padding: 2rem;
+	position: relative;
+}
+
+.pillar-grid article:hover,
+.project-card:hover {
+	transform: translateY(-8px);
+	box-shadow: var(--shadow-lg);
+	border-color: rgba(177, 132, 59, 0.2);
+}
+
+/* Enhanced Section Styling */
+.section,
+.pillars,
+.projects,
+.building,
+.entrepreneurship {
+	padding: 6rem 0;
+}
+
+.section-heading {
+	margin-bottom: 4rem;
+}
+
+.section-heading h2 {
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+/* Enhanced Typography */
+h1, h2, h3 {
+	font-weight: 700;
+	letter-spacing: -0.01em;
+}
+
+.section-content > h2,
+.section-heading h2 {
+	text-wrap: balance;
+	color: var(--ink);
+}
+
+/* Enhanced Photo Frame */
+.photo-placeholder {
+	border-radius: 4px;
+	transition: var(--transition);
+	position: relative;
+}
+
+.photo-placeholder::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent);
+	border-radius: 4px;
+	pointer-events: none;
+}
+
+/* Enhanced Input Styling */
+.contact input,
+.contact textarea {
+	border-radius: 6px;
+	border: 1.5px solid var(--line);
+	padding: 1rem;
+	transition: var(--transition);
+	font-size: 1rem;
+	background: #fff;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+	border-color: var(--accent);
+	box-shadow: 0 0 0 4px rgba(177, 132, 59, 0.1);
+	outline: none;
+	background: #fafaf8;
+}
+
+/* Enhanced Navigation */
+.site-nav a {
+	position: relative;
+	transition: var(--transition);
+	padding: 0.5rem 0;
+}
+
+.site-nav a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--accent);
+	transition: width 0.3s ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+	width: 100%;
+}
+
+/* Enhanced Header */
+.site-header {
+	background: rgba(245, 243, 239, 0.7);
+	backdrop-filter: blur(10px);
+	box-shadow: var(--shadow-xs);
+	border-bottom: 1px solid rgba(214, 216, 216, 0.3);
+}
+
+.site-header.scrolled {
+	box-shadow: var(--shadow-sm);
+	border-bottom-color: rgba(214, 216, 216, 0.5);
+}
+
+/* Enhanced Project Cards */
+.project-card {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.project-meta {
+	display: flex;
 	align-items: center;
-	max-width: 1000px;
+	gap: 1rem;
+	font-size: 0.75rem;
+}
+
+.project-actions {
+	margin-top: auto;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.project-actions button,
+.project-actions a {
+	transition: var(--transition);
+	font-size: 0.9rem;
+}
+
+.project-actions button:hover,
+.project-actions a:hover {
+	transform: translateX(2px);
+}
+
+/* Enhanced Resume Sheet */
+.resume-sheet {
+	border-radius: 8px;
+	box-shadow: var(--shadow-md);
+	border: 1px solid rgba(214, 216, 216, 0.5);
+	background: linear-gradient(135deg, #fffefa 0%, #fafaf8 100%);
+}
+
+.resume-tags span {
+	border-radius: 4px;
+	transition: var(--transition);
+	background: rgba(177, 132, 59, 0.05);
+	border-color: rgba(177, 132, 59, 0.2);
+}
+
+.resume-tags span:hover {
+	background: rgba(177, 132, 59, 0.1);
+	border-color: var(--accent);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-sm);
+}
+
+/* Enhanced Strength List */
+.strength-list span {
+	padding: 0.75rem 1.2rem;
+	border-radius: 6px;
+	background: rgba(177, 132, 59, 0.08);
+	transition: var(--transition);
+	border: 1px solid rgba(177, 132, 59, 0.15);
+	font-weight: 500;
+	letter-spacing: 0.3px;
+}
+
+.strength-list span:hover {
+	background: rgba(177, 132, 59, 0.15);
+	border-color: var(--accent);
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-sm);
+}
+
+/* Enhanced Footer */
+.site-footer {
+	background: linear-gradient(135deg, #172235 0%, #1a2735 100%);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 4rem 0;
+}
+
+.site-footer a {
+	transition: var(--transition);
+	position: relative;
+}
+
+.site-footer a::before {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--accent);
+	transition: width 0.3s ease;
+}
+
+.site-footer a:hover::before {
+	width: 100%;
+}
+
+/* Enhanced Pillar Grid */
+.pillar-grid article {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.pillar-grid article small {
+	color: var(--accent);
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.pillar-grid article h3 {
+	margin: 0;
+	font-size: 1.3rem;
+}
+
+/* Enhanced Process Flow */
+.process {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.process > div {
+	position: relative;
+	padding-bottom: 2rem;
+}
+
+.process > div:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 110%;
+	width: 80%;
+	height: 2px;
+	background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.process strong {
+	display: block;
+	margin: 1rem 0 0.5rem;
+	font-size: 1.1rem;
+	color: var(--ink);
 }
 .photo-placeholder {
 	display: flex;
