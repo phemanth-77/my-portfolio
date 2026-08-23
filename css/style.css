@@ -93,6 +93,24 @@ body { background: linear-gradient(115deg, var(--paper) 0%, #f7f8f5 58%, #eef2ec
 .contact input:focus, .contact textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #e66d4926; outline: 0; }
 .resume-sheet { box-shadow: var(--shadow-soft); }
 .modal-panel { border-radius: 2px; box-shadow: 0 24px 70px #0000002e; }
+
+/* Enhanced photo styling and layout */
+.about-columns {
+	display: grid;
+	grid-template-columns: 1fr 340px;
+	gap: 4rem;
+	align-items: flex-start;
+	max-width: 900px;
+}
+.photo-placeholder {
+	display: grid;
+	place-items: center;
+	aspect-ratio: 7/9;
+	overflow: hidden;
+	max-width: 340px;
+	width: 100%;
+}
+
 @media (max-width: 960px) {
 	.hero-copy { max-width: none; }
 	.site-nav { border: 1px solid var(--line); }
@@ -123,9 +141,34 @@ body { background: linear-gradient(120deg, #f5f3ef 0%, #f7f6f3 56%, #e8ecec 100%
 .map-ring.ring-b { color: #8799a5; }
 .map-tech { color: #526c82; }
 .map-people { color: #7d8b72; }
-.photo-placeholder { position: relative; background: #d7d6d2; border: 0; box-shadow: 12px 12px 0 var(--accent); }
-.photo-placeholder:after { position: absolute; inset: 0; border: 1px solid #ffffff66; content: ''; pointer-events: none; }
-.photo-placeholder img { object-position: center top; filter: saturate(.88) contrast(1.03); }
+.photo-placeholder { 
+	position: relative; 
+	background: #d7d6d2; 
+	border: 0; 
+	box-shadow: 16px 16px 0 var(--accent), 0 0 0 1px rgba(0,0,0,0.05); 
+	aspect-ratio: 7/9;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 320px;
+}
+.photo-placeholder:after { 
+	position: absolute; 
+	inset: 0; 
+	border: 1px solid #ffffff66; 
+	content: ''; 
+	pointer-events: none;
+	box-shadow: inset 0 0 20px rgba(255,255,255,0.4);
+}
+.photo-placeholder img { 
+	width: 100%;
+	height: 100%;
+	object-fit: cover; 
+	object-position: center top; 
+	filter: saturate(0.92) contrast(1.05) brightness(0.98);
+	display: block;
+}
 .statement { background: var(--dark); }
 .section-light { background: #e7e7e2; }
 .project-card.green { background: #e2e3dd; }
@@ -136,5 +179,10 @@ body { background: linear-gradient(120deg, #f5f3ef 0%, #f7f6f3 56%, #e8ecec 100%
 .section-accent { background: #c39851; }
 .support-copy, .note { color: #503e25; }
 @media (max-width: 960px) {
-	.photo-placeholder { box-shadow: 8px 8px 0 var(--accent); }
+	.about-columns { grid-template-columns: 1fr; }
+	.photo-placeholder { 
+		box-shadow: 12px 12px 0 var(--accent), 0 0 0 1px rgba(0,0,0,0.05);
+		max-width: 280px;
+		margin: 0 auto;
+	}
 }
