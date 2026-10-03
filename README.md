@@ -1,24 +1,23 @@
-# Hemanth Vidya Deep | Portfolio
+# Hemanth Vidya Deep — Portfolio
 
-A standalone personal-brand portfolio for Pilli Dharma Teja Hemanth Vidya Deep, focused on management, business, strategy, leadership, product and technology.
+A responsive personal portfolio built with React, TypeScript, Vite, and Tailwind CSS.
 
-## Open locally
+## Local development
 
-Open `index.html` directly in a browser. The site uses only HTML, CSS and vanilla JavaScript.
-
-For a local development server:
+Requires Node.js 20.19+ and npm.
 
 ```bash
+npm install
 npm run dev
 ```
 
-## Deploy to Vercel
-
-The project is configured for Vercel with Vite. Authenticate and deploy from the repository root:
+## Production build
 
 ```bash
-npx vercel login
-npx vercel --prod
+npm run build
+npm run preview
 ```
 
-Alternatively, import `phemanth-77/my-portfolio` in Vercel. It will use `npm run build` and publish `dist`.
+## Deployment
+
+Pushing to `main` triggers the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds the app and deploys `dist` to GitHub Pages.
